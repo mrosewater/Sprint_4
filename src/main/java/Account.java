@@ -7,20 +7,15 @@ public class Account {
     }
 
     public boolean checkNameToEmboss(String name) {
-        /*
-             Этот метод должен проверять, что сохранённая через конструктор строка соответствует требованиям.
-             Если строка удовлетворяет условиям, метод возвращает true, иначе — false.
-         */
+        boolean isValid = false;
         if (name.length() >= 3 && name.length() <= 19) {
             if (!name.startsWith(" ") && !name.endsWith(" ")) {
                 if (name.replaceAll("[^ ]", "").length() == 1) {
-                    return true;
+                    isValid = true;
                 }
-                else return false;
             }
-            else return false;
         }
-        else return false;
+        return isValid;
     }
 
 }
